@@ -19,6 +19,7 @@ public class Generator1 : MonoBehaviour
     {
         if (isActive)
         {
+            Debug.Log(gameScript.points);
             Go();
         }
     }
@@ -27,6 +28,7 @@ public class Generator1 : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log(gameScript.points);
             gameScript.points = (gameScript.points + 1) * multiplier;
             Debug.Log(gameScript.points);
             yield return waitForSeconds;
