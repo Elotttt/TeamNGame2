@@ -5,9 +5,11 @@ using UnityEngine;
 public class Generator1 : MonoBehaviour
 {
     public GameObject generator;
-    public bool isActive;
     public int multiplier = 1;
+    public bool active;
+    
     Game gameScript;
+
     WaitForSeconds waitForSeconds = new WaitForSeconds(1f);
 
     void Start()
@@ -17,9 +19,8 @@ public class Generator1 : MonoBehaviour
 
     void Update()
     {
-        if (isActive)
-        {
-            Debug.Log(gameScript.points);
+        if (generator.activeSelf)
+        {            
             Go();
         }
     }
@@ -28,9 +29,10 @@ public class Generator1 : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(gameScript.points);
+            
             gameScript.points = (gameScript.points + 1) * multiplier;
-            Debug.Log(gameScript.points);
+            gameScript.ShowPoints();
+            
             yield return waitForSeconds;
         }
     }
