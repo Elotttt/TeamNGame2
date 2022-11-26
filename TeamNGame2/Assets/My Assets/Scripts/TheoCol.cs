@@ -9,10 +9,10 @@ public class TheoCol : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        UITemp.SetActive(true);
-        Time.timeScale = 0;
+        if (other.CompareTag("Player"))
+        {
+            UITemp.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
-
-
-
 }
