@@ -6,9 +6,6 @@ public class Game : MonoBehaviour
 {
     public float points;
 
-
-    
-
     // Update is called once per frame
     void Update()
     {
