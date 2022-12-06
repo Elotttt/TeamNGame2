@@ -29,4 +29,6 @@ public class MailDelivery : MonoBehaviour
             storageQuantity = storageQuantity + storageTopUp;
         }
     }
+
+    
 }

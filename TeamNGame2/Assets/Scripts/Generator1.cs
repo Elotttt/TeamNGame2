@@ -50,4 +50,6 @@ public class Generator1 : MonoBehaviour
             
         }
     }  
+    
+    
 }
