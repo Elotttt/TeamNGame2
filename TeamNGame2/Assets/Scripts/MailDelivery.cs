@@ -7,9 +7,11 @@ public class MailDelivery : MonoBehaviour
     public GameObject camera;
     Game gameScript;
 
+    public float storageQuantity = 0f;
+    float storageTopUp = 20f;
 
     float nextActionTime = 0.0f;
-    float waitforSell = 120f;
+    float waitforSell = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,9 @@ public class MailDelivery : MonoBehaviour
     {
         if (Time.time > nextActionTime)
         {
-            
+            nextActionTime += waitforSell;
+
+            storageQuantity = storageQuantity + storageTopUp;
         }
     }
 }
