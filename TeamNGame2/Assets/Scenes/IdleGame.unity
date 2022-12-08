@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2599212017303092274, guid: a210f6a0da8fc194a8f558b3968d9186, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3719789918849609741, guid: a210f6a0da8fc194a8f558b3968d9186, type: 3}
       propertyPath: camera
@@ -439,7 +439,7 @@ MonoBehaviour:
   storageTwo: {fileID: 475859933}
   storageThree: {fileID: 0}
   storageFour: {fileID: 0}
-  storageHub: {fileID: 0}
+  storageHub: {fileID: 1203150912}
 --- !u!1 &1324059919
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2599212017303092274, guid: a210f6a0da8fc194a8f558b3968d9186, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3719789918849609741, guid: a210f6a0da8fc194a8f558b3968d9186, type: 3}
       propertyPath: camera

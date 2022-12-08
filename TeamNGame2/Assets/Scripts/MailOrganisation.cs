@@ -33,39 +33,7 @@ public class MailOrganisation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (storageHub.storageQuantity > 0)
-        {
-            if (Time.time > sendtoGenerator)
-            {
-                nextActionTime += sendtoGenerator;
-
-                if (storageOne.quantity > storageTwo.quantity)
-                {
-                    if (storageTwo.quantity > storageThree.quantity)
-                    {
-                        if (storageThree.quantity > storageFour.quantity)
-                        {
-                            Organise(storageFour);
-                        }
-                        else
-                        {
-                            Organise(storageThree);
-                        }
-                    }
-                    else
-                    {
-                        Organise(storageTwo);
-                    }
-                    
-                }
-                else
-                {
-                    Organise(storageOne);
-                }
-
-
-            }
-        }
+       
     }
 
     void Organise(Storage storage)
@@ -73,5 +41,9 @@ public class MailOrganisation : MonoBehaviour
         storage.quantity++;
         storageHub.storageQuantity--;
 
-    }      
+    }
+
+     
+
+    
 }
