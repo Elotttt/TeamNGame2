@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MailDelivery : MonoBehaviour
 {
     public GameObject camera;
     Game gameScript;
-    public GameObject generator;
 
     public float storageQuantity = 0f;
     float storageTopUp = 20f;
@@ -23,15 +23,14 @@ public class MailDelivery : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (generator.activeSelf)
-        {
-            if (Time.time > nextActionTime)
-            {
-                nextActionTime += waitforSell;
 
-                storageQuantity = storageQuantity + storageTopUp;
-            }
+        if (Time.time > nextActionTime)
+        {
+            nextActionTime += waitforSell;
+
+            storageQuantity = storageQuantity + storageTopUp;
         }
+        
         
     }
 

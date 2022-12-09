@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2599212017303092274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1275866, y: 0.04906839, z: 1.1258016}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,9 +146,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   generator: {fileID: 3719789918849609740}
+  storageOne: {fileID: 0}
   storageTwo: {fileID: 3719789920336174950}
-  storageOne: {fileID: 3719789919961469807}
   multiplier: 1
+  generateSpeed: 1
 --- !u!1 &3719789919961469806
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 10
-  camera: {fileID: 0}
 --- !u!1 &3719789920336174949
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,4 +372,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 0
-  camera: {fileID: 0}

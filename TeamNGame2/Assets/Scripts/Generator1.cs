@@ -1,30 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Generator1 : MonoBehaviour
 {
 
+    [SerializeField]
+    private TMP_Text pointText;
+
     //GameObjects
     public GameObject camera;
     public GameObject generator;
+   
 
+    public MailDelivery storageOne;
     public Storage storageTwo;
-    public Storage storageOne;
+    
 
     //Upgrade Multiplier
     public int multiplier = 1;
 
     //Timer Variables
     float nextActionTime = 0.0f;
-    float generateSpeed = 1f;
+    public float generateSpeed = 1f;
 
 
     Game gameScript;
 
     void Start()
     {
-        storageOne = storageOne.GetComponent<Storage>();
+        pointText = GetComponent<TMP_Text>();
+        storageOne = storageOne.GetComponent<MailDelivery>();
         storageTwo = storageTwo.GetComponent<Storage>();
         gameScript = camera.GetComponent<Game>();
     }
@@ -33,15 +41,17 @@ public class Generator1 : MonoBehaviour
     {
         if (generator.activeSelf)                                                   //Runs check if Generator is Active
         {                                                                           
-            if (storageOne.quantity > 0)                                               //If there is any objects in storage, Runs main generator function
+            if (storageOne.storageQuantity > 0)                                               //If there is any objects in storage, Runs main generator function
             {
 
                 if (Time.time > nextActionTime)
                 {
                     nextActionTime += generateSpeed;
 
-                    storageOne.quantity--;                                             //Takes one away from storage once used
+                    storageOne.storageQuantity--;                                             //Takes one away from storage once used
                     storageTwo.quantity++;
+
+                    pointText.text = "hi";
 
                     gameScript.points = gameScript.points + multiplier;             //Adds points in relation to Multiplier (Upgrades)
                     gameScript.ShowPoints();
