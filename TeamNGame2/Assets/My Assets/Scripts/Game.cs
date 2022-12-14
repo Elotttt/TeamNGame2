@@ -6,13 +6,6 @@ public class Game : MonoBehaviour
 {
     public float points;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -21,5 +14,9 @@ public class Game : MonoBehaviour
             points++;
             Debug.Log(points);
         }
+    }
+    public void ShowPoints()
+    {
+        Debug.Log(points);
     }
 }
