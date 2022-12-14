@@ -6,17 +6,12 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody body;
 
+    public bool MailCount;
     float horizontal;
     float vertical;
     //float moveLimiter = 0.7f;
 
     public float runSpeed = 20.0f;
-
-    void Start()
-    {   
-        body = GetComponent<Rigidbody>();
-    }
-
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal"); 

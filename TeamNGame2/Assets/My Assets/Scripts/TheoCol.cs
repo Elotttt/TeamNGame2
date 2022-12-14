@@ -9,6 +9,7 @@ public class TheoCol : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("oof");
         if (other.CompareTag("Player"))
         {
             UITemp.SetActive(true);

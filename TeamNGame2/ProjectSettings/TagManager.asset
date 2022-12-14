@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - OldGod
+  - Hub
   layers:
   - Default
   - TransparentFX
