@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CometCollide : MonoBehaviour
+public class HighIntensityGame : MonoBehaviour
 {
+    public GameObject playerReference;
+    public Player playerScriptReference;
+
     // Start is called before the first frame update
     void Start()
     {

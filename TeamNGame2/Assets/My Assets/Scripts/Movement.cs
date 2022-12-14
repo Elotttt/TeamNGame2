@@ -23,4 +23,9 @@ public class Movement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         transform.Translate(new Vector3(horizontal, 0, vertical) * runSpeed * Time.deltaTime);
     }
+
+    public void Death()
+    {
+        transform.position = new Vector3(0, 0, 0);
+    }
 }

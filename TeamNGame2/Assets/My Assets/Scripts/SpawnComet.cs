@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnComet : MonoBehaviour
 {
-    public int spawnTimer = 1;
+    public float spawnTimer = 0.5f;
     public GameObject comet;
     //public List<GameObject> comets;
     private int xPos;
