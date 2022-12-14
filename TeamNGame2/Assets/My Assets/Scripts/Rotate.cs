@@ -9,12 +9,6 @@ public class Rotate : MonoBehaviour
     public float rotationSpeed;
     public bool rotateAroundPoint = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +19,15 @@ public class Rotate : MonoBehaviour
         else
         {
             pivotObject.transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.transform.position = new Vector3(0, 0, 0);
+            Debug.Log("Hit!");
         }
     }
 }

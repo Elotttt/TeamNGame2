@@ -5,6 +5,7 @@ using UnityEngine;
 public class Comet : MonoBehaviour
 {
     public int speed = 10;
+    public GameObject playerReference;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class Comet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.transform.position = new Vector3(0, 0, 0);
             Debug.Log("Hit!");
         }
     }
