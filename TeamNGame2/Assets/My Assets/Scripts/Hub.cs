@@ -6,6 +6,7 @@ public class Hub : MonoBehaviour
 {
     public GameObject playerReference;
     public Player playerScriptReference;
+    public bool inHub = false;
 
     private void Start()
     {
@@ -16,9 +17,16 @@ public class Hub : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            inHub = true;
             Debug.Log("Entered hub!");
             StartCoroutine(PlayerRecovery());
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inHub = false;
+        Debug.Log("Exit hub!");
     }
 
     private IEnumerator PlayerRecovery()
