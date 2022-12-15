@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Hub : MonoBehaviour
 {
@@ -10,7 +11,15 @@ public class Hub : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(PlayerRecovery());
+        Debug.Log(VariableTransfer.points.ToString());
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            SceneManager.LoadScene("IdleGame");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
