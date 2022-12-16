@@ -10,6 +10,8 @@ public class Generator1 : MonoBehaviour
     [SerializeField]
     private TMP_Text pointText;
 
+    public bool isActive;
+
     //GameObjects
     public GameObject camera;
     public GameObject generator;
@@ -20,7 +22,7 @@ public class Generator1 : MonoBehaviour
     Game gameScript;
 
     //Upgrade Multiplier
-    public int multiplier = 1;                  //this is the variable for shop upgrades
+    public float multiplier = 1;                  //this is the variable for shop upgrades (plus by multiplier after generate speed)
 
     //Timer Variables
     float nextActionTime = 0.0f;
@@ -59,6 +61,7 @@ public class Generator1 : MonoBehaviour
     {
         if (generator.activeSelf && storageOne.storageQuantity > 0)                                                   //Runs check if Generator is Active and If there is any objects in storage, Runs main generator function
         {
+
             if (Time.time > nextActionTime)                                                         //
             {
                 nextActionTime += generateSpeed;
@@ -71,6 +74,8 @@ public class Generator1 : MonoBehaviour
                 gameScript.points = gameScript.points + multiplier;                      //Adds points in relation to Multiplier (Upgrades)
                 gameScript.ShowPoints();    //debug to see points in console
             }
+
+
 
         }
     }

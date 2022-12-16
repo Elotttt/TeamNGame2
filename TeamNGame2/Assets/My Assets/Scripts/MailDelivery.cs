@@ -10,7 +10,7 @@ public class MailDelivery : MonoBehaviour
     Game gameScript;
 
     public float storageQuantity = 0f;
-    float deliveryIncrease = 20f;
+    public float deliveryIncrease = 20f;
 
 
     //timer variables
