@@ -26,6 +26,8 @@ public class Game : MonoBehaviour
         {
             SceneManager.LoadScene("Game");
         }
+
+        ShowPoints();
     }
     public void ShowPoints()
     {

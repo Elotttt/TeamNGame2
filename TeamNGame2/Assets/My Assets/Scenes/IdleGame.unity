@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &144623978 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8761129295634852934, guid: d119655f44893f44d8c5a64822507821, type: 3}
+  m_PrefabInstance: {fileID: 1030815965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5da9dbfe40b36c4397509f0ee4045b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &219949821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -148,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 982502406}
     - target: {fileID: 1142709863827849935, guid: ca566c9ec26592a42ac9edba3844eeb6, type: 3}
       propertyPath: generateSpeed
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1513094873139773817, guid: ca566c9ec26592a42ac9edba3844eeb6, type: 3}
       propertyPath: m_RootOrder
@@ -226,7 +237,8 @@ PrefabInstance:
       propertyPath: storageOne
       value: 
       objectReference: {fileID: 1203150912}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4478458638901876522, guid: ca566c9ec26592a42ac9edba3844eeb6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca566c9ec26592a42ac9edba3844eeb6, type: 3}
 --- !u!1001 &304149308
 PrefabInstance:
@@ -748,8 +760,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8761129295634852934, guid: d119655f44893f44d8c5a64822507821, type: 3}
+      propertyPath: generator
+      value: 
+      objectReference: {fileID: 217309650556376857}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d119655f44893f44d8c5a64822507821, type: 3}
+--- !u!1 &1176299309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 107999192728899848, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
+  m_PrefabInstance: {fileID: 1495967309}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1203150912 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4323212141129587700, guid: 821f0153d141f014b9168dff12effdb3, type: 3}
@@ -960,6 +981,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 362348415}
     m_Modifications:
+    - target: {fileID: -3942390213601960317, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
+      propertyPath: storageTwo
+      value: 
+      objectReference: {fileID: 982502406}
     - target: {fileID: 107999192728899848, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
       propertyPath: m_Name
       value: Shipper 2
@@ -1008,13 +1033,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3942390213601960317, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
 --- !u!4 &1495967310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2423812656402276559, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
   m_PrefabInstance: {fileID: 1495967309}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1495967311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176299309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f66c3f5c1f5cb54d905b143e9968c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointText: {fileID: 1611753218}
+  storageOne: {fileID: 982502406}
+  storageTwo: {fileID: 144623978}
+  gameScript: {fileID: 1324059923}
+  multiplier: 1
+  nextActionTime: 0
+  generateSpeed: 1
 --- !u!4 &1561972196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1513094873139773817, guid: ca566c9ec26592a42ac9edba3844eeb6, type: 3}
@@ -1423,6 +1468,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 362348415}
     m_Modifications:
+    - target: {fileID: -3942390213601960317, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
+      propertyPath: storageTwo
+      value: 
+      objectReference: {fileID: 982502406}
     - target: {fileID: 107999192728899848, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
       propertyPath: m_Name
       value: Shipper
@@ -1471,7 +1520,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3942390213601960317, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
 --- !u!1 &217309650556376857 stripped
 GameObject:
@@ -1483,6 +1533,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2423812656402276559, guid: fe6551a76ad8ec046bfc6eaf5418da15, type: 3}
   m_PrefabInstance: {fileID: 217309650556376856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &217309650556376859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217309650556376857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f66c3f5c1f5cb54d905b143e9968c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointText: {fileID: 1611753218}
+  storageOne: {fileID: 982502406}
+  storageTwo: {fileID: 144623978}
+  gameScript: {fileID: 1324059923}
+  multiplier: 1
+  nextActionTime: 0
+  generateSpeed: 1
 --- !u!1001 &4020804297525300874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1603,5 +1672,9 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1324059919}
+    - target: {fileID: 4323212141129587700, guid: 821f0153d141f014b9168dff12effdb3, type: 3}
+      propertyPath: deliveryIncrease
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 821f0153d141f014b9168dff12effdb3, type: 3}
