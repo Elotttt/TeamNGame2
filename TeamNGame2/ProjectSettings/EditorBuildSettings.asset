@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/My Assets/Scenes/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/My Assets/Scenes/IdleGame.unity
+    guid: a4d37ff36dc9ae34683fffc0e7b3b133
   m_configObjects: {}

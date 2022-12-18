@@ -9,17 +9,31 @@ public class Hub : MonoBehaviour
     public Player playerScriptReference;
     public bool inHub = false;
 
+    public bool recoveringFromHit = false;
+    public float recoveryTimeLeft;
+
     private void Start()
     {
         Debug.Log(VariableTransfer.points.ToString());
+        recoveryTimeLeft = VariableTransfer.recoveryTimeLeft;
+
+        if (recoveryTimeLeft <= 0)
+        {
+            recoveryTimeLeft = 5;
+        }
+
+        playerScriptReference.recoveringFromHit = VariableTransfer.playerRecovering;
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && inHub)
         {
             SceneManager.LoadScene("IdleGame");
         }
+
+        RecoveryTimer();
+        VariableTransfer.recoveryTimeLeft = recoveryTimeLeft;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,23 +42,29 @@ public class Hub : MonoBehaviour
         {
             inHub = true;
             Debug.Log("Entered hub!");
-            StartCoroutine(PlayerRecovery());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        inHub = false;
-        Debug.Log("Exit hub!");
+        if (other.CompareTag("Player"))
+        {
+            inHub = false;
+            Debug.Log("Exit hub!");
+        }
     }
 
-    private IEnumerator PlayerRecovery()
+    private void RecoveryTimer()
     {
-        if (playerScriptReference.recoveringFromHit == true)
+        if (playerScriptReference.recoveringFromHit == true && inHub)
         {
-            yield return new WaitForSeconds(5);
-            playerScriptReference.recoveringFromHit = false;
-            Debug.Log("Recovered at Hub!");
+            recoveryTimeLeft = recoveryTimeLeft - Time.deltaTime;
+            if (recoveryTimeLeft <= 0)
+            {
+                playerScriptReference.recoveringFromHit = false;
+                recoveryTimeLeft = 5;
+                Debug.Log("Recovered at Hub!");
+            }
         }
     }
 }

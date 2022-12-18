@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,23 +15,17 @@ public class Player : MonoBehaviour
     public float runSpeed = 20.0f;
 
     public bool recoveringFromHit = false;
-    private WaitForSeconds recoveryTime = new WaitForSeconds(5f);
 
     void Start()
     {
         body = GetComponent<Rigidbody>();
-        //StartCoroutine(Recovery());
+        recoveringFromHit = VariableTransfer.playerRecovering;
     }
 
     void Update()
     {
         Movement();
-    }
-
-    public void Death()
-    {
-        transform.position = new Vector3(0, 0, 0);
-        recoveringFromHit = true;
+        VariableTransfer.playerRecovering = recoveringFromHit;
     }
 
     private void Movement()
@@ -40,16 +35,7 @@ public class Player : MonoBehaviour
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
             transform.Translate(new Vector3(horizontal, 0, vertical) * runSpeed * Time.deltaTime);
-        }
-    }
-
-    private IEnumerator Recovery()
-    {
-        if (recoveringFromHit)
-        {
-            yield return recoveryTime;
-            recoveringFromHit = false;
-            Debug.Log("Recovered!");
+            
         }
     }
 
@@ -57,7 +43,8 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            Death();
+            recoveringFromHit = true;
+            transform.position = new Vector3(0, 0, 0);
         }
     }
 }

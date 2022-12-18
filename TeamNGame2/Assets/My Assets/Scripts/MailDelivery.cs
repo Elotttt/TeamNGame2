@@ -21,6 +21,7 @@ public class MailDelivery : MonoBehaviour
     void Start()
     {
         gameScript = camera.GetComponent<Game>();
+        storageQuantity = VariableTransfer.storageQuantity;
     }
 
     /// <summary>
@@ -36,7 +37,8 @@ public class MailDelivery : MonoBehaviour
 
             storageQuantity = storageQuantity + deliveryIncrease;           //how ever much is in the storage gets increased by the amount the delivery brings in
         }
-        
+
+        VariableTransfer.storageQuantity = storageQuantity;
         
     }
 

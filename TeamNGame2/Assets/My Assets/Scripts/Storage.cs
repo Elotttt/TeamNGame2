@@ -16,6 +16,7 @@ public class Storage : MonoBehaviour
     void Start()
     {
         generatorScript = generator.GetComponent<Generator1>(); //calls the generator script from the chosen generator
+        quantity = VariableTransfer.quantity;
     }
     void Update()
     {
@@ -23,5 +24,6 @@ public class Storage : MonoBehaviour
         //{
         //    //For sending packages to active part when setup...
         //}
+        VariableTransfer.quantity = quantity;
     }
 }
