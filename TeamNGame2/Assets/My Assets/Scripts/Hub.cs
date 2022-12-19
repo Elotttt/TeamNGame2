@@ -15,6 +15,10 @@ public class Hub : MonoBehaviour
     public GameObject UIMail2;
     public GameObject UIMail3;
 
+    public GameObject hasSmallUI;
+    public GameObject hasMediumUI;
+    public GameObject hasLargeUI;
+
     public bool hasPackage;
     public bool hasPackage1;
     public bool hasPackage2;
@@ -45,6 +49,12 @@ public class Hub : MonoBehaviour
         }
 
         RecoveryTimer();
+
+        if (points < 0)
+        {
+            points = 0;
+        }
+
         VariableTransfer.recoveryTimeLeft = recoveryTimeLeft;
         VariableTransfer.points = points;
     }
@@ -59,6 +69,13 @@ public class Hub : MonoBehaviour
             if (!hasPackage)
             {
                 Time.timeScale = 0;
+            }
+            if (playerScriptReference.recoveringFromHit)
+            {
+                if (points >= 0)
+                {
+                    points -= 3;
+                }
             }
             RandomMail();
         }
@@ -92,7 +109,7 @@ public class Hub : MonoBehaviour
         if (!hasPackage)
         {
             int rdm = Random.Range(1, 4);
-        
+
             if (rdm == 1)
             {
                 UIMail1.SetActive(true);
