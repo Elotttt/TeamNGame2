@@ -7,8 +7,7 @@ using TMPro;
 public class Generator1 : MonoBehaviour
 {
     //Text variables
-    [SerializeField]
-    private TMP_Text pointText;
+    public TMP_Text pointText;
 
     public bool isActive;
 
@@ -35,8 +34,7 @@ public class Generator1 : MonoBehaviour
     /// Initialises all variables with data from other scripts
     /// </summary>
     void Start()
-    {
-        pointText = GetComponent<TMP_Text>();
+    {       
         storageOne = storageOne.GetComponent<MailDelivery>();
         storageTwo = storageTwo.GetComponent<Storage>();
         gameScript = camera.GetComponent<Game>();
@@ -69,10 +67,9 @@ public class Generator1 : MonoBehaviour
                 storageOne.storageQuantity--;                                             //Takes one away from storage once used
                 storageTwo.quantity++;
 
-                pointText.text = gameScript.points.ToString();                                              //displays points quantity to the ui                       
-
                 gameScript.points = gameScript.points + multiplier;                      //Adds points in relation to Multiplier (Upgrades)
-                gameScript.ShowPoints();    //debug to see points in console
+
+                pointText.text = gameScript.points.ToString();                                              //displays points quantity to the ui                                      
             }
 
 
