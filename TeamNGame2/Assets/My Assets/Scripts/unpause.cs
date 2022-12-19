@@ -10,8 +10,13 @@ public class unpause : MonoBehaviour
     {
         Butt.onClick.AddListener(Unpause);
     }
-    private void Unpause()
+    public void Unpause()
     {
         Time.timeScale = 1;
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
     }
 }

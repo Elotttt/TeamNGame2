@@ -8,8 +8,17 @@ public class Hub : MonoBehaviour
     public GameObject playerReference;
     public Player playerScriptReference;
     public bool inHub = false;
-    public bool MailCounter;
-    public GameObject UIMail;
+    public float points;
+
+    //public GameObject UIMail;
+    public GameObject UIMail1;
+    public GameObject UIMail2;
+    public GameObject UIMail3;
+
+    public bool hasPackage;
+    public bool hasPackage1;
+    public bool hasPackage2;
+    public bool hasPackage3;
 
     public bool recoveringFromHit = false;
     public float recoveryTimeLeft;
@@ -17,6 +26,7 @@ public class Hub : MonoBehaviour
     private void Start()
     {
         Debug.Log(VariableTransfer.points.ToString());
+        points = VariableTransfer.points;
         recoveryTimeLeft = VariableTransfer.recoveryTimeLeft;
 
         if (recoveryTimeLeft <= 0)
@@ -36,6 +46,7 @@ public class Hub : MonoBehaviour
 
         RecoveryTimer();
         VariableTransfer.recoveryTimeLeft = recoveryTimeLeft;
+        VariableTransfer.points = points;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,7 +55,12 @@ public class Hub : MonoBehaviour
         {
             inHub = true;
             Debug.Log("Entered hub!");
-            UIMail.SetActive(true);
+            //UIMail.SetActive(true);
+            if (!hasPackage)
+            {
+                Time.timeScale = 0;
+            }
+            RandomMail();
         }
     }
 
@@ -68,6 +84,31 @@ public class Hub : MonoBehaviour
                 recoveryTimeLeft = 5;
                 Debug.Log("Recovered at Hub!");
             }
+        }
+    }
+
+    private void RandomMail()
+    {
+        if (!hasPackage)
+        {
+            int rdm = Random.Range(1, 4);
+        
+            if (rdm == 1)
+            {
+                UIMail1.SetActive(true);
+                hasPackage1 = true;
+            }
+            else if (rdm == 2)
+            {
+                UIMail2.SetActive(true);
+                hasPackage2 = true;
+            }
+            else
+            {
+                UIMail3.SetActive(true);
+                hasPackage3 = true;
+            }
+            hasPackage = true;
         }
     }
 }
