@@ -63,7 +63,7 @@ public class Shipper : MonoBehaviour
                 pointText.text = gameScript.points.ToString();                                              //displays points quantity to the ui                       
 
                 gameScript.points = gameScript.points + multiplier;                      //Adds points in relation to Multiplier (Upgrades)
-                gameScript.ShowPoints();    //debug to see points in console
+                
             }
         }
     }
