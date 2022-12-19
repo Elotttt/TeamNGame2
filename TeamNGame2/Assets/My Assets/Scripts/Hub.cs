@@ -8,6 +8,8 @@ public class Hub : MonoBehaviour
     public GameObject playerReference;
     public Player playerScriptReference;
     public bool inHub = false;
+    public bool MailCounter;
+    public GameObject UIMail;
 
     public bool recoveringFromHit = false;
     public float recoveryTimeLeft;
@@ -42,6 +44,7 @@ public class Hub : MonoBehaviour
         {
             inHub = true;
             Debug.Log("Entered hub!");
+            UIMail.SetActive(true);
         }
     }
 

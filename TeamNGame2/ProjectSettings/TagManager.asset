@@ -6,6 +6,8 @@ TagManager:
   tags:
   - OldGod
   - Hub
+  - Obstacle
+  - OuterRim
   layers:
   - Default
   - TransparentFX
